@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Image Generator</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 30px;
+      background-color: #111;
+      color: white;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+      margin: 10px;
+    }
+    img {
+      margin-top: 20px;
+      max-width: 100%;
+      height: auto;
+      border: 4px solid #fff;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>AI Image Generator</h1>
+  <p>اكتب كلمة وستظهر لك صورة مناسبة</p>
+  <input type="text" id="prompt" placeholder="اكتب هنا..." />
+  <button onclick="generate()">أنشئ</button>
+
+  <div id="output"></div>
+
+  <script>
+    function generate() {
+      const prompt = document.getElementById("prompt").value.trim().toLowerCase();
+      const output = document.getElementById("output");
+
+      if (prompt === "verdoomy") {
+        output.innerHTML = `<img src="verdoomy.jpg" alt="verdoomy image" />`;
+      } else {
+        output.innerHTML = `<p>لا توجد صورة لكلمة "${prompt}"</p>`;
+      }
+    }
+  </script>
+</body>
+</html>
